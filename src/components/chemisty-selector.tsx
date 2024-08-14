@@ -75,9 +75,15 @@ const ChemistrySelector = ({ control, register }: Props) => {
           ))}
         </Select>
         <Input
-          type="number"
+          type="text"
+          inputMode="numeric"
+          pattern="[0-9]*"
           className="w-42"
+          classNames={{
+            base: "opacity-100",
+          }}
           labelPlacement="outside"
+          color={selectedType?.key !== "custom" ? "success" : "default"}
           placeholder="0"
           value={selectedType?.voltage?.toString()}
           isDisabled={selectedType?.key !== "custom"}
@@ -89,7 +95,9 @@ const ChemistrySelector = ({ control, register }: Props) => {
       {selectedType?.key === "custom" && (
         <div className="flex gap-4">
           <Input
-            type="number"
+            type="text"
+            inputMode="numeric"
+            pattern="[0-9]*"
             label="Charge Voltage"
             labelPlacement="outside"
             placeholder="0"
@@ -97,7 +105,9 @@ const ChemistrySelector = ({ control, register }: Props) => {
             endContent={<FaBolt />}
           />
           <Input
-            type="number"
+            type="text"
+            inputMode="numeric"
+            pattern="[0-9]*"
             label="Discharge Cutoff Voltage"
             labelPlacement="outside"
             placeholder="0"
@@ -108,7 +118,9 @@ const ChemistrySelector = ({ control, register }: Props) => {
       )}
       <div className="flex gap-4 justify-end">
         <Input
-          type="number"
+          type="text"
+          inputMode="numeric"
+          pattern="[0-9]*"
           classNames={{ inputWrapper: "pr-0 pl-3", base: "w-56" }}
           label="Capacity"
           labelPlacement="outside"

@@ -65,7 +65,7 @@ const Stats = ({
             </p>
             <p>
               Min:
-              <span className="font-mono ml-[1.35rem]">
+              <span className="font-mono ml-3">
                 {packMinVoltage.toFixed(1)}V
               </span>
             </p>

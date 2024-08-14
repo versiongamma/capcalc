@@ -9,11 +9,11 @@ type Props = {
   control: Control<Data>;
 };
 
-const Details = ({ register, control }: Props) => (
+const CellInput = ({ register, control }: Props) => (
   <Card isBlurred className="m-4">
     <CardHeader>
       <div className="flex justify-between w-full">
-        <h2 className="font-black text-lg">Cell Details</h2>
+        <h2 className="font-black text-xl">Cell Details</h2>
         <FaBatteryFull fontSize={32} />
       </div>
     </CardHeader>
@@ -21,7 +21,9 @@ const Details = ({ register, control }: Props) => (
       <ChemistrySelector register={register} control={control} />
       <div className="flex gap-4 w-full my-4">
         <Input
-          type="number"
+          type="text"
+          inputMode="numeric"
+          pattern="[0-9]*"
           label="Cells in Series"
           labelPlacement="outside"
           placeholder="Series"
@@ -35,6 +37,9 @@ const Details = ({ register, control }: Props) => (
         />
         <Input
           label="Cells in Parallel"
+          type="text"
+          inputMode="numeric"
+          pattern="[0-9]*"
           labelPlacement="outside"
           placeholder="Parallel"
           {...register("parallel")}
@@ -49,4 +54,4 @@ const Details = ({ register, control }: Props) => (
     </CardBody>
   </Card>
 );
-export default Details;
+export default CellInput;
