@@ -91,12 +91,18 @@ const ChemistrySelector = ({ control, register }: Props) => {
           <Input
             type="number"
             label="Charge Voltage"
+            labelPlacement="outside"
+            placeholder="0"
             {...register("maxVoltage")}
+            endContent={<FaBolt />}
           />
           <Input
             type="number"
             label="Discharge Cutoff Voltage"
+            labelPlacement="outside"
+            placeholder="0"
             {...register("minVoltage")}
+            endContent={<FaBolt />}
           />
         </div>
       )}
